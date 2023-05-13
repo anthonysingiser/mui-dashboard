@@ -1,4 +1,5 @@
 import Button from '@mui/material/Button'
+import Navbar from "./components/Navbar/Navbar"
 
 function App() {
   
@@ -9,6 +10,7 @@ function App() {
         onClick={() => console.log('click event')}> 
         MUI Button 
       </Button>
+      <Navbar />
     </div>
   )
 
