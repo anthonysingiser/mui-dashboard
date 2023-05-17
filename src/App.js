@@ -1,17 +1,15 @@
-import Button from '@mui/material/Button'
+import React from 'react'
 import Navbar from "./components/Navbar/Navbar"
+import {Outlet} from 'react-router-dom'
+import Grid from '@mui/material/Grid'
 
 function App() {
   
   return(
-    <div>
-      <Button
-        variant='outlined'
-        onClick={() => console.log('click event')}> 
-        MUI Button 
-      </Button>
+    <Grid container>
       <Navbar />
-    </div>
+      <Outlet />
+    </Grid>
   )
 
 }

@@ -10,37 +10,37 @@ export const mainNavbarItems = [
     {
         id: 0,
         icon: <PeopleIcon/>,
-        label: 'Authenticaton',
-        route: 'route'
+        label: 'Authentication',
+        route: 'authentication'
     },
     {
         id: 1,
         icon: <DnsIcon/>,
         label: 'Database',
-        route: 'route'
+        route: 'database'
     },
     {
         id: 2,
         icon: <ImageIcon/>,
         label: 'Storage',
-        route: 'route'
+        route: 'storage'
     },
     {
         id: 3,
         icon: <PublicIcon/>,
         label: 'Hosting',
-        route: 'route'
+        route: 'hosting'
     },
     {
         id: 4,
         icon: <SettingsEthernetIcon/>,
         label: 'Functions',
-        route: 'route'
+        route: 'functions'
     },
     {
         id: 5,
         icon: <SettingsInputComponentIcon/>,
         label: 'Machine Learning',
-        route: 'route'
+        route: 'machine-learning'
     }
 ] 
