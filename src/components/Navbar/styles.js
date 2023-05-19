@@ -2,7 +2,7 @@ export const navbarStyles = {
     drawer: {
         width: 320,
         flexShrink: 0,
-        '& .Muidrawer-paper': {
+        '& .MuiDrawer-paper': {
             width: 320,
             boxSizing: 'border-box',
             backgroundColor: '#101F33',
@@ -14,7 +14,7 @@ export const navbarStyles = {
     },
     icons: {
         color: 'rgba(255, 255, 255, 0.7)!important',
-        marginLeft: '20px', 
+        marginLeft: '20px',
     },
     text: {
         '& span': {
@@ -23,4 +23,4 @@ export const navbarStyles = {
             fontSize: '16px',
         }
     }
-}
+};
