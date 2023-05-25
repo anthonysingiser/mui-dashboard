@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import MenuItem, { menuItemClasses } from '@mui/material/MenuItem';
 
 
 const BasicMenu = ({ anchorEl, handleClose, open }) => {
@@ -13,9 +13,13 @@ return(
             open={open}
             onClose={handleClose}
         >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
+            {menuItemClasses.map((item) => (
+                <MenuItem 
+                    onClick={handleClose}
+                >
+                    {item.label}
+                </MenuItem>
+            ))}
         </Menu>
     </div>
     )
