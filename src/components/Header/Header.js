@@ -7,8 +7,7 @@ import Typography from '@mui/material/Typography'
 import Tooltip from '@mui/material/Tooltip'
 import HelpIcon from '@mui/icons-material/Help';
 
-const Header = () => {
-    const title = 'auth'
+const Header = ({ title }) => {
     return (
       <div>
         <CommonButton

@@ -5,7 +5,9 @@ import Header from '../../components/Header/Header'
 const Authentication = () => {
     return (
     <Grid item xs={8}>
-       <Header />
+       <Header 
+            title="Authentication"
+        />
     </Grid>
     )
 }

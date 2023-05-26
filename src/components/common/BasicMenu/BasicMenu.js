@@ -3,7 +3,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem, { menuItemClasses } from '@mui/material/MenuItem';
 
 
-const BasicMenu = ({ anchorEl, handleClose, open }) => {
+const BasicMenu = ({ anchorEl, handleClose, open, menuItems }) => {
 
 return(
     <div>
@@ -13,7 +13,7 @@ return(
             open={open}
             onClose={handleClose}
         >
-            {menuItemClasses.map((item) => (
+            {menuItems.map((item) => (
                 <MenuItem 
                     onClick={handleClose}
                 >
