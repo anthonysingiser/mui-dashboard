@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Menu from '@mui/material/Menu';
-import MenuItem, { menuItemClasses } from '@mui/material/MenuItem';
+import MenuItem from '@mui/material/MenuItem';
 
 
 const BasicMenu = ({ anchorEl, handleClose, open, menuItems }) => {
