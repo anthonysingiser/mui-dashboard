@@ -1,20 +1,11 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
-import NotificationBell from '../../components/common/Notifications/NotificationBell'
-
+import Header from '../../components/Header/Header'
 
 const Authentication = () => {
     return (
     <Grid item xs={8}>
-        This is Authentication
-        <CommonButton
-            variant="default"
-        >
-            Go to docs
-        </CommonButton>
-        <NotificationBell 
-            iconColor='primary'
-        />
+       <Header />
     </Grid>
     )
 }
