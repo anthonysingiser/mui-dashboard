@@ -6,7 +6,7 @@ import Header from './components/Header/Header'
 import { useLocation } from 'react-router-dom'
 
 function App() {
-  const {title, setTitle} = useState(null)
+  const [title, setTitle] = useState(null)
   const location = useLocation()
   
 
