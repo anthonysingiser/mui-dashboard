@@ -4,9 +4,8 @@ import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal'
 import { modalStyles } from './modalStyles'
 import CommonButton from '../CommonButton/CommonButton'
-import Input from '@mui/material/Input'
 
-const BasicModal = ({ open, onClose }) => {
+const BasicModal = ({ open, onClose, title, subTitle, content }) => {
     const validate = () => {
     }
 
@@ -19,19 +18,15 @@ const BasicModal = ({ open, onClose }) => {
                         variant="h6" 
                         component="h2"
                     >
-                        New User
+                        {title}
                     </Typography>
                     <Typography 
                         id="modal-modal-description" 
                         sx={{ mt: 2 }}
                     >
-                        Fill out form and click submit
+                        {subTitle}
                     </Typography>
-                    <Box sx={modalStyles.inputFields}>
-                        <Input placeholder="E-Mail" />
-                        <Input placeholder="Phone Number" />
-                        <Input placeholder= "User ID" />
-                    </Box>
+                    {content}
                 </Box>
                 <Box sx={modalStyles.buttons}>
                     <CommonButton

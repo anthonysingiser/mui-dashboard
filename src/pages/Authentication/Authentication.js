@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import GridWrapper from '../../components/common/GridWrapper/GridWrapper';
 import { cardHeaderStyles } from './styles';
-import BasicModal from '../../components/common/BasicModal/BasicModal';
+import NewUserModal from '../../components/Modals/NewUserModal/NewUserModal';
 
 const Authentication = () => {
     const [open, setOpen] = useState(false)
@@ -57,7 +57,7 @@ const Authentication = () => {
             header={getHeader()}
             content={getContent()}
         />
-        <BasicModal open={open} onClose={() => setOpen(false)}/>
+        <NewUserModal open={open} onClose={() => setOpen(false)}/>
     </GridWrapper>
     )
 }
