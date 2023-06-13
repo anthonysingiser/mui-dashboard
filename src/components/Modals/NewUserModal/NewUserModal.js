@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react"
 import BasicModal from '../../common/BasicModal/BasicModal'
 import Box from '@mui/material/Box'
-import { TextField } from "@mui/material"
+import TextField  from "@mui/material/TextField"
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
 const defaultInputValues = {
-    userId: "",
-    email: "",
-    phoneNumber: "",
+    userId: '',
+    email: '',
+    phoneNumber: '',
 }
 
 
-function NewUserModal({ open, onClose }) {
+function NewUserModal({ open, onClose, addNewUser }) {
     const [values, setValues] = useState(defaultInputValues)
+
     const modalStyles = {
         inputFields: {
             display: 'flex',
@@ -30,30 +31,36 @@ function NewUserModal({ open, onClose }) {
     const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
     const validationSchema = Yup.object().shape({
-        userId: Yup.string()
+        userId: Yup.string('user id is required')
             .required()
             .min(8, 'User ID must be at least 8 characters'),
-        email: Yup.string()
+        email: Yup.string('email is required')
             .required('Email is required')
             .email('Email is invalid'),
-        phoneNumber: Yup.string()
+        phoneNumber: Yup.string('phone number is required')
             .matches(phoneRegExp, 'Phone number is not valid'),
     })
     const {
-        register, handleSubmit, formState: { errors },
+        register, 
+        handleSubmit, 
+        formState: { errors },
     } = useForm({
         resolver: yupResolver(validationSchema)
     })
 
     const addUser = (data) => {
-        console.log(data)
+        addNewUser(data)
     }
 
     const handleChange = (value) => {
-        console.log(value)
+        setValues(value)
     }
 
-    const getContent = () => {
+    useEffect(() => {
+        if (open) setValues(defaultInputValues)
+    }, [open])
+
+    const getContent = () => (
         <Box sx={modalStyles.inputFields}>
             <TextField
                 placeholder="User ID"
@@ -61,9 +68,11 @@ function NewUserModal({ open, onClose }) {
                 label="User ID"
                 required
                 {...register('userId')}
-                onChange={(event) => handleChange({ userId: event.target.value})}
                 error={errors.userId ? true : false}
-                helperText={errors.userId?.message} />
+                helperText={errors.userId?.message}
+                value={values.userId}
+                onChange={(event) => handleChange({ ...values, userId: event.target.value })} 
+            />
             <TextField
                 placeholder="Email"
                 name="email"
@@ -71,7 +80,10 @@ function NewUserModal({ open, onClose }) {
                 required
                 {...register('email')}
                 error={errors.email ? true : false}
-                helperText={errors.email?.message} />
+                helperText={errors.email?.message} 
+                value={values.email}
+                onChange={(event) => handleChange({ ...values, email: event.target.value })}
+            />
             <TextField
                 placeholder="Phone Number"
                 name="phoneNumber"
@@ -79,9 +91,12 @@ function NewUserModal({ open, onClose }) {
                 required
                 {...register('phoneNumber')}
                 error={errors.phoneNumber ? true : false}
-                helperText={errors.phoneNumber?.message} />
+                helperText={errors.phoneNumber?.message}
+                value={values.phoneNumber}
+                onChange={(event) => handleChange({ ...values, phoneNumber: event.target.value })} 
+            />
         </Box>
-    }
+    )
     return (
         <BasicModal
             open={open}
@@ -90,9 +105,8 @@ function NewUserModal({ open, onClose }) {
             subTitle="fill out form and submit"
             content={getContent()}
             onSubmit={handleSubmit(addUser)}
-        >
+        />
 
-        </BasicModal>
     )
 }
 
