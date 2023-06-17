@@ -6,30 +6,37 @@ import { Typography } from "@mui/material"
 import CommonButton from "../CommonButton/CommonButton"
 import { Box } from "@mui/material"
 
-const ProgressStepper = ( {steps, stepDescription} ) => {
+const ProgressStepper = ( { steps, stepDescription } ) => {
     const [activeStep, setActiveStep] = useState(0)
     const [completed, setCompleted] = useState({})
+    const [completedSteps, setCompletedSteps] = useState(0)
 
     const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1)
+        setActiveStep(activeStep - 1)
+        delete(completed[activeStep])
+
+        setCompletedSteps(Object.keys(completed).length - 1)
     }
 
     const totalSteps = steps.length
-    const completedSteps = Object.keys(completed).length
     const allStepsCompleted = completedSteps === totalSteps
 
 
     const handleNext = () => {
+
+        setActiveStep(activeStep + 1)
+
         const newCompleted = completed
         newCompleted[activeStep] = true
-
         setCompleted(newCompleted)
-        setActiveStep((prevActiveStep) => prevActiveStep + 1)
+
+        setCompletedSteps(Object.keys(completed).length)
     }
 
     const handleReset = () => {
         setActiveStep(0)
         setCompleted({})
+        setCompletedSteps(0)
     }
 
     return (
