@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import GridWrapper from '../../components/common/GridWrapper/GridWrapper'
 import BasicSnackbar from '../../components/common/BasicSnackbar/BasicSnackbar'
-import CommonButton from '../../components/common/CommonButton/CommonButton'
-import Loading from '../../components/common/Loading/Loading'
-import DataTable from '../../components/common/DataTable/DataTable'
+import UserTable from '../../components/UserTable/UserTable'
 
 
 const Storage = () => {
@@ -32,7 +30,7 @@ const Storage = () => {
 
     return (
         <GridWrapper>
-          <DataTable/>
+          <UserTable/>
         </GridWrapper>
     )
 }

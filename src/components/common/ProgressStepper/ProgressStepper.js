@@ -43,7 +43,7 @@ const ProgressStepper = ( { steps, stepDescription } ) => {
         <div>
             <Stepper 
                 activeStep={activeStep}
-                orientation='vertical' 
+                orientation='horizontal' 
             >
                 {steps.map((step, index) => (
                 <Step 
