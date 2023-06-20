@@ -3,6 +3,8 @@ import GridWrapper from '../../components/common/GridWrapper/GridWrapper'
 import BasicSnackbar from '../../components/common/BasicSnackbar/BasicSnackbar'
 import CommonButton from '../../components/common/CommonButton/CommonButton'
 import Loading from '../../components/common/Loading/Loading'
+import DataTable from '../../components/common/DataTable/DataTable'
+
 
 const Storage = () => {
     const [open, setOpen] = useState(false);
@@ -30,28 +32,7 @@ const Storage = () => {
 
     return (
         <GridWrapper>
-          {loading ?
-            <Loading>
-            <CommonButton 
-                variant="contained" 
-                onClick={onClick}
-            >
-            </CommonButton>
-            </Loading>
-            :
-            <CommonButton 
-            variant="contained" 
-            onClick={onClick}
-            >
-              Open success snackbar
-            </CommonButton>
-          } 
-            <BasicSnackbar
-                open={open}
-                severity="success"
-                onClose={onClose}
-                message={message}
-            />
+          <DataTable/>
         </GridWrapper>
     )
 }
