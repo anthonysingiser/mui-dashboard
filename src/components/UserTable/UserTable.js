@@ -9,7 +9,11 @@ const columns = [
     { field: 'email', headerName: 'Email', width: 150 },
 ]
 
-const UserTable = () => {
+const userTableStyles = {
+    height: '650px',
+}
+
+const UserTable = ({ onError }) => {
 
     const [users, setUsers] = useState([])
 
@@ -17,6 +21,7 @@ const UserTable = () => {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(json => setUsers(json))
+            .catch(() => onError)
     }, [])
 
     return (
@@ -24,6 +29,8 @@ const UserTable = () => {
             <DataTable 
                 rows={users}
                 columns={columns}
+                loading={!users.length}
+                sx={userTableStyles}
             />
         </div>
     )
