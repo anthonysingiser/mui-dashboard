@@ -28,8 +28,8 @@ const ProgressStepper = ( { steps, stepDescription } ) => {
 
         const newCompleted = completed
         newCompleted[activeStep] = true
-        setCompleted(newCompleted)
 
+        setCompleted(newCompleted)
         setCompletedSteps(Object.keys(completed).length)
     }
 
@@ -43,7 +43,7 @@ const ProgressStepper = ( { steps, stepDescription } ) => {
         <div>
             <Stepper 
                 activeStep={activeStep}
-                orientation='horizontal' 
+                orientation='vertical' 
             >
                 {steps.map((step, index) => (
                 <Step 
@@ -97,7 +97,7 @@ const ProgressStepper = ( { steps, stepDescription } ) => {
                                 onClick={handleBack} 
                                 variant='contained'
                                 disabled={activeStep === 0}
-                                sx={{ mr: 1 }}
+                                sx={{ mr: 4 }}
                             > 
                                 Back 
                             </CommonButton>
