@@ -22,7 +22,7 @@ const UserTable = ({ onError }) => {
             .then(response => response.json())
             .then(json => setUsers(json))
             .catch(() => onError)
-    }, [])
+    }, [onError])
 
     return (
         <div>
