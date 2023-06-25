@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/mui-dashboard/static/js/main.0b02ceb2.js",
+    "main.js": "/mui-dashboard/static/js/main.f88c52c2.js",
     "index.html": "/mui-dashboard/index.html",
-    "main.0b02ceb2.js.map": "/mui-dashboard/static/js/main.0b02ceb2.js.map"
+    "main.f88c52c2.js.map": "/mui-dashboard/static/js/main.f88c52c2.js.map"
   },
   "entrypoints": [
-    "static/js/main.0b02ceb2.js"
+    "static/js/main.f88c52c2.js"
   ]
 }
