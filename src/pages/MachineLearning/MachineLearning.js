@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid'
 const Hosting = () => {
     return (
         <Grid item xs={8}>
-            This is Hosting 
+            This is Machine Learning
         </Grid>
     )
 }

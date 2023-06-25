@@ -8,7 +8,7 @@ import Hosting from './pages/Hosting/Hosting'
 import MachineLearning from './pages/MachineLearning/MachineLearning'
 import Storage from './pages/Storage/Storage'
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route
 } from 'react-router-dom'
@@ -18,7 +18,7 @@ import dashboardTheme from './dashboardTheme';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider theme={dashboardTheme}>
-    <BrowserRouter>
+    <HashRouter>
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="authentication" element={<Authentication/>}/>
@@ -29,6 +29,6 @@ root.render(
         <Route path="storage" element={<Storage/>}/>   
       </Route>
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </ThemeProvider>
 );
